@@ -1,0 +1,33 @@
+<div id="container">
+  <div style="text-align: center" id="status"></div>
+  <div id="sipIdentity"></div>
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-center">
+      <h1>Welcome to EngageDigital Demo Application</h1>
+    </div>
+    <input style="margin-left: 0.8em" class="textfield" type="text" id="engageDomain" size="50"
+        placeholder="rtc.radisys.com" value="rtc.engagedigital.ai" />
+    <input class="textfield" type="text" id="userIdentity" size="50" value="bob" />
+    <button id="makeCallBtn" disabled>Call</button>
+    <button id="endCallBtn" disabled>Hang Up</button>
+    <div class="col-md-8">
+      <div class="videoContainer">
+        <div class="innervideo">
+          <div class="watermark">Local Video</div><video id="localVideo" playsinline autoplay muted></video>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 d-flex justify-content-end align-items-end">
+      <div class="videoContainer">
+        <div class="innervideo">
+          <div class="watermark">Remote Video</div><video id="remoteVideo" playsinline autoplay></video>
+        </div>
+      </div>
+    </div>
+    <span class="fieldName">Enter valid service Phone Number :</span><input class="textfield" type="text" id="callTo"
+        size="50" placeholder="eg: +919090909090, 18000001234, +14155552671" value="9070707120" />
+    <button id="connectBtn">Connect</button>
+    <button id="disconnectBtn" disabled>Disconnect</button>
+
+  </div>
+</div>
