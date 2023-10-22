@@ -10,9 +10,9 @@ export class HomePageComponent {
   constructor(private scriptService: ScriptService) { }
 
   ngOnInit() {
-    this.scriptService.loadScript({id: 'my-script2', url : 'assets/js/header.js'})
+    /* this.scriptService.loadScript({id: 'my-script2', url : 'assets/js/particles.js'})
     .then(data => {
         console.log('script loaded ', data);
-    }).catch(error => console.log(error));
+    }).catch(error => console.log(error)); */
   }
 }

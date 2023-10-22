@@ -6,12 +6,12 @@
            <h1 class="title">MediMeet</h1>
       </div>
     </div>
-    <div class="col-md-6 text-end">
+    <div class="col-md-6 text-name">
       <h6 class="text">Welcome {{user?.name}}</h6>
     </div>
   </div>    
   <div class="row m-0">
-    <div style="text-align: center" id="status"></div>
+    <div id="status" class="title-status"></div>
     <div id="sipIdentity"></div>
     <div class="col-md-12">
       <input style="margin-left: 0.8em" class="textfield" type="text" id="engageDomain" size="50"
@@ -23,13 +23,13 @@
       <button id="disconnectBtn" hidden>Disconnect</button>
     </div>
   </div>
-  <div class="row mx-4">
+  <div class="row mx-4 mt-5 mb-5">
     <div class="col-md-6 d-flex align-items-center justify-content-center">
       <div class="innervideo">
         <div class="watermark">Patient's Video</div><video id="localVideo" playsinline autoplay muted></video>
       </div>
     </div>
-    <div class="col-md-6 d-flex align-items-center justify-content-center mb-4">
+    <div class="col-md-6 d-flex align-items-center justify-content-center">
       <div id="remoteDiv" class="innervideo" hidden>
         <div class="watermark">Doctor's Video</div><video id="remoteVideo" playsinline autoplay></video>            
       </div>

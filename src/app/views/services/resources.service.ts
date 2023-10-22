@@ -13,11 +13,12 @@ export class ResourcesService {
   constructor(private http: HttpClient) { }
 
   public login(user: User): Observable<any>{    
-    return this.http.post(`${this.API_BACK}/demochat/login`, user);
+    localStorage.setItem("contador", '0');
+    return this.http.post(`${this.API_BACK}/user/login`, user);
   }
 
   public userActive(): Observable<any>{    
-    return this.http.get(`${this.API_BACK}/demochat/active-session`);
+    return this.http.get(`${this.API_BACK}/user/active-session`);
   }
 
   public setUser(user: User){
@@ -31,6 +32,16 @@ export class ResourcesService {
       return JSON.parse(user);
     }else{
       return null;
+    }
+  }
+
+  public reload(){
+    if(localStorage.getItem('contador') !== null){
+      let cont = localStorage.getItem('contador');
+      if(cont === '0'){
+        localStorage.setItem("contador", '1');
+        location.reload();
+      }
     }
   }
 
