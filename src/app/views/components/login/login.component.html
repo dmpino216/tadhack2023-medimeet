@@ -1,8 +1,8 @@
 <section>
-  <div class="wrapper background">
-      <div class="container mb-5 mx-4">
+  <div class="wrapper background d-flex justify-content-center align-items-center">
+      <div class="container mx-4">
         <div class="container-img d-flex text-center">
-          <img src="assets/img/1.png">
+          <img src="assets/img/logoBlanco.png">
         </div>
         <h1 class="text-center py-5 font-weight-bold">Login</h1>
         <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
@@ -12,7 +12,7 @@
           </div>
           
           <div class="form-group mb-3">
-            <label for="exampleInputPassword1" class="form-label" >Password</label>
+            <label for="exampleInputPassword1" class="form-label" in>Password</label>
             <input type="password" class="form-control text-white" id="exampleInputPassword1" formControlName="password" placeholder="***********" autocomplete="nope" placeholder="Password">
           </div>
   
