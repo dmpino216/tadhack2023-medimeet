@@ -28,20 +28,22 @@ canvas {
   
   h1 {
     color: #64EBB6;
+    font-weight: bold;
     padding-bottom: 0px;
-    margin-bottom: 1%;
+    margin-bottom: 0.1rem;
   }
   
   h3 {
     color: #555560;
     font-size: 2rem;
-    font-weight: bold;
+    font-family: 'Monoton', cursive;
+    font-weight: normal;
     margin: 0px;
     padding: 0px;
   }
   
   .logo {
-    font-family: 'Monoton', cursive;
+    
     color: white;
     font-size: 8rem;
   }
