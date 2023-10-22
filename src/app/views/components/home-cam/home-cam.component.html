@@ -24,6 +24,11 @@
     </div>
   </div>
   <div class="row mx-4">
+    <div class="col-md-6 d-flex align-items-center justify-content-center">
+      <div class="innervideo">
+        <div class="watermark">Patient's Video</div><video id="localVideo" playsinline autoplay muted></video>
+      </div>
+    </div>
     <div class="col-md-6 d-flex align-items-center justify-content-center mb-4">
       <div id="remoteDiv" class="innervideo" hidden>
         <div class="watermark">Doctor's Video</div><video id="remoteVideo" playsinline autoplay></video>            
@@ -31,12 +36,7 @@
       <div id="evaGif" class="imgContainer" hidden>
         <img src="assets/img/medico.png"alt="Doctor Image">
       </div>
-    </div>
-    <div class="col-md-6 d-flex align-items-center justify-content-center">
-      <div class="innervideo">
-        <div class="watermark">Patient's Video</div><video id="localVideo" playsinline autoplay muted></video>
-      </div>
-    </div>
+    </div>    
   </div>
   <div class="row mb-5">
     <div class="col-md-12 button-container">
