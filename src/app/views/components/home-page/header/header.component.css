@@ -1,12 +1,16 @@
 .visit{
   color:white;
   font-size:12px;
-  background:#32333a;;
   width:146px;
   padding:6px;
   border-radius:10px;
   position:fixed;
   right:20px;
+}
+
+.navbar {
+  background: transparent !important;
+  color: #fff;
 }
 
 .tam-nav {

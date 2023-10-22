@@ -1,3 +1,13 @@
+
+.background {
+  background-image: url(/../../../assets/img/fondo.png);
+  background-color: rgba(0, 0, 0, 0.8);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+
 canvas {
   background-color: #282931;
   height: 100vh;
@@ -17,7 +27,7 @@ a {
 }
 
 p {
-  color: #808B96;
+  color: #edf2f6;
   font-size: 1rem;
   font-weight: bold;
 }
@@ -34,7 +44,7 @@ h1 {
 }
 
 h3 {
-  color: #555560;
+  color: #d0d0db;
   font-size: 2rem;
   font-family: 'Monoton', cursive;
   font-weight: normal;
@@ -48,7 +58,8 @@ h3 {
 }
 
 .top {
-  padding-bottom: 5rem;
+  padding-top: 8%;
+  padding-bottom: 1%;
 }
   
 .pulled ul li {
@@ -67,7 +78,7 @@ h3 {
 }
 
 .footer{
-  padding-top:10rem;
+  padding-top:6rem;
   padding-left: 70rem;
 }
 
