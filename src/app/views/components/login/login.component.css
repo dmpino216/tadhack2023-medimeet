@@ -1,0 +1,95 @@
+
+
+.background {
+  background-image: url(/../../../assets/img/fondo.png);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+
+.container{
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  box-shadow: -1px 0px 30px -7px rgba(0,0,0,0.75);
+  width: 35rem;
+  height: 35rem;
+}
+
+h1{
+  font-size: 35px;
+  font-weight: bold;
+  background: linear-gradient(
+    200deg, #0a66a4, #0c96c0
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container-img  {
+  width: 500px;
+  height: 100px;
+}
+
+.container-img  img {
+  margin: 50px 0px 0px 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: lighten;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-primary {
+  --bs-btn-color: #f0f1e5;
+  --bs-btn-bg: #0a66a4;
+  --bs-btn-border-color: #3b2c1e;
+  --bs-btn-hover-color: #41464b;
+  font-weight: bold !important;
+}
+
+.link-warning {
+  color: #0a66a4 !important;
+  font-weight: bold !important;
+}
+
+.link-warning:hover {
+  color: #e4e4e5 !important;
+}
+
+.form-group{
+  margin-left: 9%;
+  margin-right: 9%;
+}
+
+.form-group input {
+  color: #e4e4e5;
+  border: none;
+  border-bottom: 3px solid #0a66a4; 
+  background-color: transparent !important;
+  height: 50px;
+}
+
+.form-group input:focus {
+  color:#f0f1e5;
+  background-color: transparent !important;
+  border: none; 
+  border-bottom: 3px solid #ffffff;  
+  box-shadow: none;
+}
+
+.form-group input:-webkit-autofill, input:-ms-input-placeholder {
+  background-color: transparent !important; 
+  color: #333; 
+}
+
+label{
+  color: #e4e4e5;
+}
+
+::placeholder {
+  color: #e4e4e5;
+  font-size: 13px;
+}
+

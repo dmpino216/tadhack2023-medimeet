@@ -1,0 +1,22 @@
+.visit{
+  color:white;
+  font-size:12px;
+  width:146px;
+  padding:6px;
+  border-radius:10px;
+  position:fixed;
+  right:20px;
+}
+
+.navbar {
+  background: transparent !important;
+  color: #fff;
+}
+
+.tam-nav {
+  height: 4.688rem;
+}
+
+.tam-font {
+  font-size: 15px;
+}

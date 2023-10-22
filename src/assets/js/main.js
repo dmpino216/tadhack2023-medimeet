@@ -4,8 +4,10 @@ console.log('Starting');
 
 let isEngageDigitalSdkLoaded = false;
 
-const connectBtn = document.getElementById('connectBtn');
-connectBtn.addEventListener('click', connectToEngageDigital);
+/* const connectBtn = document.getElementById('connectBtn');
+connectBtn.addEventListener('click', connectToEngageDigital); */
+
+window.addEventListener("load", connectToEngageDigital);
 
 const disConnectBtn = document.getElementById('disconnectBtn');
 disConnectBtn.addEventListener('click', disConnectFromEngageDigital)
@@ -34,8 +36,10 @@ remoteDiv.hidden = false;
 const evaGif = document.getElementById('evaGif');
 
 function connectToEngageDigital() {
-
-  /* const engageDomain = document.getElementById('engageDomain').value;
+  
+  console.log('userIdentity ', document.getElementById('userIdentity').value)
+  console.log('connectToEngageDigital')
+  const engageDomain = document.getElementById('engageDomain').value;
 
   if (isEngageDigitalSdkLoaded) {
     const userIdentity = document.getElementById('userIdentity').value;
@@ -52,7 +56,7 @@ function connectToEngageDigital() {
   } else {
     //Only load for the first time
     loadEngageDigitalSDK(engageDomain);
-  } */
+  } 
   console.log(document.getElementById('userIdentity').value)
   console.log('connect')
 }
@@ -68,19 +72,20 @@ function registerForEngageDigitalClientEvents() {
   });
 
   engageDigitalClient.addEventHandler('connecting', () => {
-    updateStatus('Connecting to Engage Digital...');
+    updateStatus('Connecting with doctor...');
   });
 
   /*
    * This event is being called when connectivity is established for the first time.
    */
   engageDigitalClient.addEventHandler('connected', () => {
-    updateStatus('Connected to Engage Digital');
+    updateStatus('Connected with a doctor, please press the call button.');
 
     connectBtn.disabled = true;
     disConnectBtn.disabled = false;
     makeCallBtn.disabled = false;
     sipIdentityDiv.innerText = "Your Sip Identity : " + engageDigitalClient.getUri().toString();
+    sipIdentityDiv.hidden = true;
   });
 
   /*
@@ -101,7 +106,7 @@ function registerForEngageDigitalClientEvents() {
    * Fired when the connection is re-established
    */
   engageDigitalClient.addEventHandler('reconnected', () => {
-    updateStatus('Re-connected to Engage Digital');
+    updateStatus('Re-connected with a doctor');
   });
 
   engageDigitalClient.addEventHandler('failed', (error) => {
@@ -134,12 +139,17 @@ function disConnectFromEngageDigital() {
 
 function makeCall() {
 
-  connectToEngageDigital();
+  //connectToEngageDigital();
 
-  /* const callToNum = document.getElementById('callTo').value;
+  const callToNum = document.getElementById('callTo').value;
   setCallControlButtonsDisableStatus({ make: true });
+  
+  console.log('callTo ', document.getElementById('callTo').value)
+  console.log('call')
 
-  try {
+  try {    
+  evaGif.hidden = false;
+  remoteDiv.hidden = true;
     engageDigitalClient.makeCall(callToNum, {
       mediaConstraints: {
         audio: true,
@@ -147,12 +157,13 @@ function makeCall() {
       },
       joinWithVideoMuted: false,
     });
-
   } catch (error) {
+    evaGif.hidden = true;
+    remoteDiv.hidden = false;
     updateStatus('Call: Provide valid phone number');
     console.log('Error in make call : ' + error.errorMessage);
     setCallControlButtonsDisableStatus({ make: false });
-  } */
+  }
   console.log(document.getElementById('callTo').value)
   evaGif.hidden = false;
   remoteDiv.hidden = true;
@@ -183,7 +194,7 @@ function onNewEngageSession(session) {
     * Call is disconnected by the client, can use this event to update the status of call in UI
     */
   engageDigitalSession.addEventHandler('disconnected', () => {
-    updateStatus('Call: DisConnected');
+    updateStatus('Call: Disconnected, please press the call button to reconnect with the doctor.');
 
     setCallControlButtonsDisableStatus({ make: false });
     clearVideoElements();
