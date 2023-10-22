@@ -1,41 +1,56 @@
 <div id="container">
-  <div style="text-align: center" id="status"></div>
-  <div id="sipIdentity"></div>
-  <div class="row m-3">
-    <div class="col-md-12 d-flex justify-content-center">
-      <h1>Welcome {{user?.name}} to MediMeet Demo Application</h1>
+  <div class="row my-4">
+    <div class="col-md-6">
+      <div class="logo-container">
+          <img src="assets/img/logoClaro.png" alt="Logo" class="logo-img">
+           <h1 class="title">MediMeet</h1>
+      </div>
     </div>
+    <div class="col-md-6 text-end">
+      <h6 class="text">Welcome {{user?.name}}</h6>
+    </div>
+  </div>    
+  <div class="row m-0">
+    <div style="text-align: center" id="status"></div>
+    <div id="sipIdentity"></div>
     <div class="col-md-12">
       <input style="margin-left: 0.8em" class="textfield" type="text" id="engageDomain" size="50"
           placeholder="rtc.radisys.com" value="rtc.engagedigital.ai" hidden />
     </div>
     <div class="col-md-12">
       <input class="textfield" type="text" id="userIdentity" size="50" hidden/>
-
       <button id="connectBtn" hidden>Connect</button>
       <button id="disconnectBtn" hidden>Disconnect</button>
     </div>
-    <div class="col-md-12 mt-3">
-      <div class="padre">
-        <div class="videoContainer">
-          <div class="innervideo">
-            <div class="watermark">Local Video</div><video id="localVideo" playsinline autoplay muted></video>
-          </div>
-        </div>
-        <div class="hijo videoContainer">
-          <div id="remoteDiv" class="innervideo" hidden>
-            <div class="watermark">Remote Video</div><video id="remoteVideo" playsinline autoplay></video>            
-          </div>
-          <div id="evaGif" class="gifContainer" hidden>
-            <img src="assets/img/eva.gif" width="90%">
-          </div>
-        </div>
+  </div>
+  <div class="row mx-4">
+    <div class="col-md-6 d-flex align-items-center justify-content-center mb-4">
+      <div id="remoteDiv" class="innervideo" hidden>
+        <div class="watermark">Doctor's Video</div><video id="remoteVideo" playsinline autoplay></video>            
+      </div>
+      <div id="evaGif" class="imgContainer" hidden>
+        <img src="assets/img/medico.png"alt="Doctor Image">
       </div>
     </div>
-    <div class="col-md-12">
-      <input class="textfield" type="text" id="callTo" size="50" placeholder="eg: +919090909090, 18000001234, +14155552671" value="9070707120" hidden/>
-      <button id="makeCallBtn" disabled>Call</button>
-      <button id="endCallBtn" disabled>Hang Up</button>
+    <div class="col-md-6 d-flex align-items-center justify-content-center">
+      <div class="innervideo">
+        <div class="watermark">Patient's Video</div><video id="localVideo" playsinline autoplay muted></video>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-md-12 button-container">
+      <input class="textfield " type="text" id="callTo" size="50" placeholder="eg: +919090909090, 18000001234, +14155552671" value="9070707120" hidden/>
+      <button id="makeCallBtn" disabled><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone-forward-fill" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zm10.761.135a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708z"/>
+      </svg></button>
+      <button id="endCallBtn" disabled><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone-x-fill" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zm9.261 1.135a.5.5 0 0 1 .708 0L13 2.793l1.146-1.147a.5.5 0 0 1 .708.708L13.707 3.5l1.147 1.146a.5.5 0 0 1-.708.708L13 4.207l-1.146 1.147a.5.5 0 0 1-.708-.708L12.293 3.5l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
+      </svg></button>
+    </div>
+  
+    <div class="col-md-12 text-end">
+      <p class="team">By: CodeMasters</p>
     </div>
   </div>
 </div>

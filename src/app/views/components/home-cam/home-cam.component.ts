@@ -11,11 +11,13 @@ import { ResourcesService } from '../../services/resources.service';
 export class HomeCamComponent implements OnInit {
 
   user: User;
+  horaActual: string;
 
   constructor(private scriptService: ScriptService, private resourceService: ResourcesService) { }
 
   ngOnInit() {
     this.initValues();
+    this.obtenerHoraSistema();
   }
 
   initValues(){
@@ -38,5 +40,15 @@ export class HomeCamComponent implements OnInit {
 
   generarNumeroAleatorio(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  obtenerHoraSistema() {
+    const ahora = new Date();
+    this.horaActual = ahora.toLocaleTimeString();
+    // Actualiza la hora cada segundo (opcional)
+    setInterval(() => {
+      const nuevaHora = new Date();
+      this.horaActual = nuevaHora.toLocaleTimeString();
+    }, 1000);
   }
 }
