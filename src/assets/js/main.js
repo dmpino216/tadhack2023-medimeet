@@ -13,7 +13,7 @@ disConnectBtn.disabled = true;
 
 const makeCallBtn = document.getElementById('makeCallBtn')
 makeCallBtn.addEventListener('click', makeCall);
-makeCallBtn.disabled = true;
+makeCallBtn.disabled = false;
 
 const endCallBtn = document.getElementById('endCallBtn');
 endCallBtn.addEventListener('click', disconnectCall);
@@ -28,9 +28,14 @@ const sipIdentityDiv = document.getElementById('sipIdentity');
 let engageDigitalClient;
 let engageDigitalSession;
 
+const remoteDiv = document.getElementById('remoteDiv');
+remoteDiv.hidden = false;
+
+const evaGif = document.getElementById('evaGif');
+
 function connectToEngageDigital() {
 
-  const engageDomain = document.getElementById('engageDomain').value;
+  /* const engageDomain = document.getElementById('engageDomain').value;
 
   if (isEngageDigitalSdkLoaded) {
     const userIdentity = document.getElementById('userIdentity').value;
@@ -47,7 +52,9 @@ function connectToEngageDigital() {
   } else {
     //Only load for the first time
     loadEngageDigitalSDK(engageDomain);
-  }
+  } */
+  console.log(document.getElementById('userIdentity').value)
+  console.log('connect')
 }
 
 function registerForEngageDigitalClientEvents() {
@@ -127,7 +134,9 @@ function disConnectFromEngageDigital() {
 
 function makeCall() {
 
-  const callToNum = document.getElementById('callTo').value;
+  connectToEngageDigital();
+
+  /* const callToNum = document.getElementById('callTo').value;
   setCallControlButtonsDisableStatus({ make: true });
 
   try {
@@ -143,7 +152,11 @@ function makeCall() {
     updateStatus('Call: Provide valid phone number');
     console.log('Error in make call : ' + error.errorMessage);
     setCallControlButtonsDisableStatus({ make: false });
-  }
+  } */
+  console.log(document.getElementById('callTo').value)
+  evaGif.hidden = false;
+  remoteDiv.hidden = true;
+  console.log('call')
 }
 
 function onNewEngageSession(session) {
@@ -315,6 +328,8 @@ function incomingCallRejectAction() {
 };
 
 function disconnectCall() {
+  evaGif.hidden = true;
+  remoteDiv.hidden = false;
   engageDigitalSession.disconnectCall();
   setCallControlButtonsDisableStatus({ make: false });
 }

@@ -6,6 +6,7 @@ import { HomeCamComponent } from './home-cam.component';
   imports: [
     CommonModule
   ],
-  declarations: [HomeCamComponent]
+  declarations: [HomeCamComponent],
+  exports: [ HomeCamComponent ]
 })
 export class HomeCamModule { }
